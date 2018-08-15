@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AnimationPush_2_VC.h
 //  转场动画Demo
 //
 //  Created by congboyang on 2018/8/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface AnimationPush_2_VC : UIViewController
 
 @end
-

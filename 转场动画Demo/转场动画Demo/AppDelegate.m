@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "AnimationPush_1_VC.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor    = [UIColor whiteColor];
+    
+    AnimationPush_1_VC * vc = [[AnimationPush_1_VC alloc] init];
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    nav.navigationBar.hidden = YES;
+    self.window.rootViewController = nav;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
