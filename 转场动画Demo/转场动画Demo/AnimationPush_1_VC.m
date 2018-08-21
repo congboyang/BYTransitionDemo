@@ -8,8 +8,9 @@
 
 #import "AnimationPush_1_VC.h"
 #import "AnimationPush_2_VC.h"
+#import "PushAnimation.h"
 
-@interface AnimationPush_1_VC ()
+@interface AnimationPush_1_VC ()<UINavigationControllerDelegate>
 
 @end
 
@@ -18,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +31,15 @@
 {
     AnimationPush_2_VC * vc = [[AnimationPush_2_VC alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    if (operation == UINavigationControllerOperationPush) {
+        return [[PushAnimation alloc] init];
+    }
+    
+    return nil;
 }
 
 /*

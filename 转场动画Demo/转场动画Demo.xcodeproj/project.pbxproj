@@ -12,6 +12,7 @@
 		3352AECB212434E3004AADDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3352AECA212434E3004AADDC /* main.m */; };
 		3352AED3212438B8004AADDC /* AnimationPush_1_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3352AED2212438B8004AADDC /* AnimationPush_1_VC.m */; };
 		3352AED6212438DF004AADDC /* AnimationPush_2_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3352AED5212438DF004AADDC /* AnimationPush_2_VC.m */; };
+		3352AFC3212C2EFE004AADDC /* PushAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3352AFC2212C2EFE004AADDC /* PushAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,8 @@
 		3352AED2212438B8004AADDC /* AnimationPush_1_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationPush_1_VC.m; sourceTree = "<group>"; };
 		3352AED4212438DF004AADDC /* AnimationPush_2_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationPush_2_VC.h; sourceTree = "<group>"; };
 		3352AED5212438DF004AADDC /* AnimationPush_2_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationPush_2_VC.m; sourceTree = "<group>"; };
+		3352AFC1212C2EFE004AADDC /* PushAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushAnimation.h; sourceTree = "<group>"; };
+		3352AFC2212C2EFE004AADDC /* PushAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				3352AED2212438B8004AADDC /* AnimationPush_1_VC.m */,
 				3352AED4212438DF004AADDC /* AnimationPush_2_VC.h */,
 				3352AED5212438DF004AADDC /* AnimationPush_2_VC.m */,
+				3352AFC1212C2EFE004AADDC /* PushAnimation.h */,
+				3352AFC2212C2EFE004AADDC /* PushAnimation.m */,
 				3352AEC4212434E2004AADDC /* Assets.xcassets */,
 				3352AEC9212434E3004AADDC /* Info.plist */,
 				3352AECA212434E3004AADDC /* main.m */,
@@ -139,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3352AFC3212C2EFE004AADDC /* PushAnimation.m in Sources */,
 				3352AED6212438DF004AADDC /* AnimationPush_2_VC.m in Sources */,
 				3352AECB212434E3004AADDC /* main.m in Sources */,
 				3352AEBD212434E2004AADDC /* AppDelegate.m in Sources */,
