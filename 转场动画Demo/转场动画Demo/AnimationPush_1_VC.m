@@ -20,6 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.delegate = self;
+    self.view.backgroundColor = [UIColor yellowColor];
 }
 
 - (void)didReceiveMemoryWarning {

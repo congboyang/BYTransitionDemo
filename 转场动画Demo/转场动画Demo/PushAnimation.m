@@ -47,6 +47,17 @@
     // 转场视图容器
     UIView *containerView = [transitionContext containerView];
     
+    UIView* toView = nil;
+    UIView* fromView = nil;
+    
+    if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
+        fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+        toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+    } else {
+        fromView = fromVC.view;
+        toView = toVC.view;
+    }
+    
     
     // 我们需要获取CollectionViewCell 上面的视图 进行做动画
     
@@ -76,7 +87,8 @@
     toVC.view.frame = [transitionContext finalFrameForViewController:toVC];
     
     // 把动画前后的两个ViewController加到容器控制器中
-    [containerView addSubview:toVC.view];
+    [containerView addSubview:toView];
+    [containerView addSubview:fromView];
     //    [containerView addSubview:screenShot];
     
     [containerView layoutIfNeeded];
@@ -86,16 +98,14 @@
     // 现在开始做动画
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
-//         调用自动布局
-                [containerView layoutIfNeeded];
         
-                fromVC.view.alpha = 0;
+                fromView.alpha = 0;
         
     } completion:^(BOOL finished) {
         
         // 动画截图移除View
-                toVC.view.alpha = 1;
-                fromVC.view.alpha = 1;
+                toView.alpha = 1;
+                fromView.alpha = 1;
         
         // 动画结束
         
