@@ -14,7 +14,7 @@
 
 -(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    return 2;
+    return 12;
 }
 
 -(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
@@ -78,18 +78,11 @@
     // - (CGRect)convertRect:(CGRect)rect fromView:(UIView *)view;
     // 将坐标frame的rect值，由当前所在的目标视图View中， 返回在当前视图中的rect
     
-    //    UIView *screenShot = [fromVC.titleView snapshotViewAfterScreenUpdates:NO];
-    //    screenShot.backgroundColor = [UIColor clearColor];
-    //    screenShot.frame = toVC.titleView.frame;
-    
-    // 设置第二个控制器的位置和透明度
-    
     toVC.view.frame = [transitionContext finalFrameForViewController:toVC];
     
     // 把动画前后的两个ViewController加到容器控制器中
     [containerView addSubview:toView];
     [containerView addSubview:fromView];
-    //    [containerView addSubview:screenShot];
     
     [containerView layoutIfNeeded];
     
@@ -97,16 +90,32 @@
     
     // 现在开始做动画
     
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
-        
-                fromView.alpha = 0;
-        
+    double duration = [self transitionDuration:transitionContext];
+    
+    [UIView animateKeyframesWithDuration:duration delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+
+        [UIView addKeyframeWithRelativeStartTime: 0 relativeDuration: 0.1 animations: ^{
+            fromView.backgroundColor = [UIColor blueColor];
+        }];
+        [UIView addKeyframeWithRelativeStartTime: 0.1 relativeDuration: 0.15 animations: ^{
+            fromView.backgroundColor = [UIColor grayColor];
+        }];
+        [UIView addKeyframeWithRelativeStartTime: 0.25 relativeDuration: 0.3 animations: ^{
+            fromView.backgroundColor = [UIColor purpleColor];
+        }];
+        [UIView addKeyframeWithRelativeStartTime: 0.55 relativeDuration: 0.3 animations: ^{
+            fromView.backgroundColor = [UIColor greenColor];
+        }];
+        [UIView addKeyframeWithRelativeStartTime: 0.85 relativeDuration: 0.15 animations: ^{
+            fromView.backgroundColor = [UIColor blackColor];
+        }];
+
     } completion:^(BOOL finished) {
-        
         // 动画截图移除View
-                toView.alpha = 1;
-                fromView.alpha = 1;
-        
+        toView.alpha = 1;
+        fromView.alpha = 1;
+        fromView.backgroundColor = [UIColor yellowColor];
+
         // 动画结束
         
         // 一定不要忘记告诉系统动画结束
